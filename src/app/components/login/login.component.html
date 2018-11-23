@@ -1,0 +1,62 @@
+<div class="login-box">
+  <div class="box box-info">
+    <div class="box-header with-border">
+      <h3 class="box-title">Login</h3>
+    </div>
+
+    <form class="form-horizontal" #form="ngForm" (ngSubmit)="login()">
+
+      <div class="box-body">
+
+        <!-- login -->
+        <div [ngClass]="getFromGroupClass(email.invalid, email.dirty)" class="has-feedback">
+          <div class="col-sm-12">
+            <input type="email" class="form-control" id="email" name="email" placeholder="e-mail" [(ngModel)]="user.email" #email="ngModel"
+              email>
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          </div>
+        </div>
+
+        <!-- password -->
+        <div [ngClass]="getFromGroupClass(password.invalid, password.dirty)" class="has-feedback">
+          <div class="col-sm-12">
+            <input type="password" class="form-control" id="password" name="password" placeholder="senha" [(ngModel)]="user.password"
+              #password="ngModel" required>
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </div>
+        </div>
+
+        <div class="row row-button">
+          <div class="col-sm-12">
+            <button type="submit" [disabled]="!form.valid || loading" class="btn btn-info">
+              <span *ngIf="!loading">entrar</span>
+              <span *ngIf="loading">segura ai que seu jogador está no aquecimento</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- <div class="row row-links">
+          <div class="col-sm-12">
+            <a [routerLink]="['/novo-usuario']">Novo Jogador - Esta esperando o que parça?</a>
+          </div>
+        </div>
+
+        <div class="row row-links">
+          <div class="col-sm-12">
+            <a [routerLink]="['/regulamento']">Regulamento - Aprende como funciona com o pai aqui meu parceiro</a>
+          </div>
+        </div> -->
+
+        <div [ngClass]="classCss" class="col-sm-12" role="alert" *ngIf="message">
+          <p>{{ message.text }}</p>
+        </div>
+
+        <div class="col-sm-12 alert alert-danger" role="alert" *ngIf="(email.invalid && email.dirty) || (password.invalid && password.dirty)">
+          <p *ngIf="email.invalid && email.dirty">parça tem alguma coisa errada com este e-mail ai</p>
+          <p *ngIf="password.invalid && password.dirty">parça está esquecendo de colocar sua senha</p>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>

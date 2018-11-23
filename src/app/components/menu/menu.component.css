@@ -1,0 +1,27 @@
+.menu-header {
+    color: #8aa4af !important;
+    font-size: 15px !important;
+}
+
+.sidebar-menu>li .label, .sidebar-menu>li .badge {
+    margin-top: 2px;
+    padding-top: 3px;
+}
+
+form {
+    color: #b8c7ce;
+}
+
+form:hover {
+    color: #fff;
+}
+
+form button {
+    color: #b8c7ce;
+    padding-left: 8px;
+}
+
+form button:hover {
+    color: #fff;
+    text-decoration: none;
+}

@@ -1,0 +1,83 @@
+<!-- <a [routerLink]="['/meu-jogo', shared.user.id]"> -->
+
+<aside class="main-sidebar" *ngIf="shared.user">
+  <section class="sidebar">
+    <ul class="sidebar-menu" data-widget="tree">
+      <li class="header menu-header">
+        {{ shared.user.name | limitTo : 15 }}
+        <small class="label pull-right bg-blue">{{ shared.user.position }}° lugar</small>
+      </li>
+
+      <li>
+        <a [routerLink]="['/meu-jogo']">
+          <i class="fa fa-dashboard"></i>
+          <span>Meu Jogo</span>
+        </a>
+      </li>
+
+      <li>
+        <a [routerLink]="['/resultado-oficial']">
+          <i class="fa fa-edit"></i>
+          <span>Resultado Oficial</span>
+        </a>
+      </li>
+
+      <li>
+        <a [routerLink]="['/classificacao']">
+          <i class="fa fa-table"></i>
+          <span>Classificação</span>
+        </a>
+      </li>
+
+      <li>
+        <a [routerLink]="['/palpites']">
+          <i class="fa fa-android"></i>
+          <span>Palpites</span>
+        </a>
+      </li>
+
+      <li>
+        <a [routerLink]="['/regulamento']">
+          <i class="fa fa-book"></i>
+          <span>Regulamento</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="https://chat.whatsapp.com/AkOa1kvrdV44YD17frBk1V" target="_blank">
+          <i class="fa fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+      </li>
+
+      <li class="header menu-header">
+        Pagamentos
+      </li>
+
+      <li>
+        <a mp-mode="dftl" href="https://www.mercadopago.com/mlb/checkout/start?pref_id=220213125-a764d240-7d32-4479-a345-9b07824109ae"
+          name="MP-payButton" class='blue-ar-m-sq-none' target="_blank">
+          <i class="fa fa-money"></i>
+          <span>MercadoPago</span>
+        </a>
+        <script type="text/javascript">
+          (function () { function $MPC_load() { window.$MPC_loaded !== true && (function () { var s = document.createElement("script"); s.type = "text/javascript"; s.async = true; s.src = document.location.protocol + "//secure.mlstatic.com/mptools/render.js"; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); window.$MPC_loaded = true; })(); } window.$MPC_loaded !== true ? (window.attachEvent ? window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null; })();
+        </script>
+      </li>
+
+      <li>
+        <a [routerLink]="['/regulamento']">
+          <i class="fa fa-paypal"></i>
+          <span>Débito em conta</span>
+        </a>
+      </li>
+
+      <li>
+        <a [routerLink]="['/regulamento']">
+          <i class="fa fa-phone"></i>
+          <span>Transferência via telefone</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+</aside>
